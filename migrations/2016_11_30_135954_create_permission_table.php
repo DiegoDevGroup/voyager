@@ -13,7 +13,7 @@ class CreatePermissionTable extends Migration
      */
     public function up()
     {
-        Schema::create('voyager_permissions', function (Blueprint $table) {
+        Schema::create('vygr_permissions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('key')->index();
             $table->string('table_name');
@@ -28,6 +28,6 @@ class CreatePermissionTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('voyager_permissions');
+        Schema::dropIfExists('vygr_permissions');
     }
 }

@@ -13,7 +13,7 @@ class AddDetailsToDatatypesTable extends Migration
      */
     public function up()
     {
-        Schema::table('voyager_data_types', function (Blueprint $table) {
+        Schema::table('vygr_data_types', function (Blueprint $table) {
             $table->text('details')->nullable()->after('server_side');
         });
     }
@@ -25,7 +25,7 @@ class AddDetailsToDatatypesTable extends Migration
      */
     public function down()
     {
-        Schema::table('voyager_data_types', function (Blueprint $table) {
+        Schema::table('vygr_data_types', function (Blueprint $table) {
             $table->dropColumn('details');
         });
     }

@@ -12,7 +12,7 @@ use TCG\Voyager\Facades\Voyager;
  */
 class Menu extends Model
 {
-    protected $table = 'voyager_menus';
+    protected $table = 'vygr_menus';
 
     protected $guarded = [];
 
@@ -52,7 +52,7 @@ class Menu extends Model
     public static function display($menuName, $type = null, array $options = [])
     {
         // GET THE MENU - sort collection in blade
-        $menu = \Cache::remember('voyager_menu_'.$menuName, \Carbon\Carbon::now()->addDays(30), function () use ($menuName) {
+        $menu = \Cache::remember('vygr_menu_'.$menuName, \Carbon\Carbon::now()->addDays(30), function () use ($menuName) {
             return static::where('name', '=', $menuName)
             ->with(['parent_items.children' => function ($q) {
                 $q->orderBy('order');
@@ -101,7 +101,7 @@ class Menu extends Model
 
     public function removeMenuFromCache()
     {
-        \Cache::forget('voyager_menu_'.$this->name);
+        \Cache::forget('vygr_menu_'.$this->name);
     }
 
     private static function processItems($items)

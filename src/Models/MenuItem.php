@@ -15,7 +15,7 @@ class MenuItem extends Model
         'link' => 'translatorLink',
     ];
 
-    protected $table = 'voyager_menu_items';
+    protected $table = 'vygr_menu_items';
 
     protected $guarded = [];
 

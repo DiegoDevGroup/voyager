@@ -13,7 +13,7 @@ class CreateRolesTable extends Migration
      */
     public function up()
     {
-        Schema::create('voyager_roles', function (Blueprint $table) {
+        Schema::create('vygr_roles', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name')->unique();
             $table->string('display_name');
@@ -28,6 +28,6 @@ class CreateRolesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('voyager_roles');
+        Schema::drop('vygr_roles');
     }
 }

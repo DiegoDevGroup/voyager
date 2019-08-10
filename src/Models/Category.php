@@ -12,7 +12,7 @@ class Category extends Model
 
     protected $translatable = ['slug', 'name'];
 
-    protected $table = 'voyager_categories';
+    protected $table = 'vygr_categories';
 
     protected $fillable = ['slug', 'name'];
 

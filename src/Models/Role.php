@@ -7,7 +7,7 @@ use TCG\Voyager\Facades\Voyager;
 
 class Role extends Model
 {
-    protected $table = 'voyager_roles';
+    protected $table = 'vygr_roles';
 
     protected $guarded = [];
 

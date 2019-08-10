@@ -13,7 +13,7 @@ class Post extends Model
     use Translatable,
         Resizable;
 
-    protected $table = 'voyager_posts';
+    protected $table = 'vygr_posts';
 
     protected $translatable = ['title', 'seo_title', 'excerpt', 'body', 'slug', 'meta_description', 'meta_keywords'];
 

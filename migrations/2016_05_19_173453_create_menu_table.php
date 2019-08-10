@@ -12,13 +12,13 @@ class CreateMenuTable extends Migration
      */
     public function up()
     {
-        Schema::create('voyager_menus', function (Blueprint $table) {
+        Schema::create('vygr_menus', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->unique();
             $table->timestamps();
         });
 
-        Schema::create('voyager_menu_items', function (Blueprint $table) {
+        Schema::create('vygr_menu_items', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('menu_id')->nullable();
             $table->string('title');
@@ -31,8 +31,8 @@ class CreateMenuTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('voyager_menu_items', function (Blueprint $table) {
-            $table->foreign('menu_id')->references('id')->on('voyager_menus')->onDelete('cascade');
+        Schema::table('vygr_menu_items', function (Blueprint $table) {
+            $table->foreign('menu_id')->references('id')->on('vygr_menus')->onDelete('cascade');
         });
     }
 
@@ -43,7 +43,7 @@ class CreateMenuTable extends Migration
      */
     public function down()
     {
-        Schema::drop('voyager_menu_items');
-        Schema::drop('voyager_menus');
+        Schema::drop('vygr_menu_items');
+        Schema::drop('vygr_menus');
     }
 }

@@ -9,7 +9,7 @@ class DataRow extends Model
 {
     use Translatable;
 
-    protected $table = 'voyager_data_rows';
+    protected $table = 'vygr_data_rows';
 
     protected $guarded = [];
 

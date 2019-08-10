@@ -13,7 +13,7 @@ class AddOrderToDataRowsTable extends Migration
      */
     public function up()
     {
-        Schema::table('voyager_data_rows', function (Blueprint $table) {
+        Schema::table('vygr_data_rows', function (Blueprint $table) {
             $table->integer('order')->default(1)->after('details');
         });
     }
@@ -25,7 +25,7 @@ class AddOrderToDataRowsTable extends Migration
      */
     public function down()
     {
-        Schema::table('voyager_data_rows', function (Blueprint $table) {
+        Schema::table('vygr_data_rows', function (Blueprint $table) {
             $table->dropColumn('order');
         });
     }

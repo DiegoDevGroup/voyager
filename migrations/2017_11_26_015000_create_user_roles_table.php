@@ -15,11 +15,7 @@ class CreateUserRolesTable extends Migration
     {
         Schema::create('vygr_user_roles', function (Blueprint $table) {
             $type = DB::connection()->getDoctrineColumn('users', 'id')->getType()->getName();
-            if ($type == 'bigint') {
-                $table->bigInteger('user_id')->unsigned()->index();
-            } else {
-                $table->integer('user_id')->unsigned()->index();
-            }
+            $table->uuid('user_id')->index();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->bigInteger('role_id')->unsigned()->index();
